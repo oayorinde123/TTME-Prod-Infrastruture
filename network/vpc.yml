@@ -113,8 +113,8 @@ Outputs:
     Value: !Ref 'PublicSubnetTwo'
     Export:
       Name: !Sub ${EnvironmentName}:PublicSubnetTwo
-  # SecurityGroupId:
-  #   Description: The ID of the security group
-  #   Value: !Ref GenAIChatboxSG
-  #   Export:
-  #     Name: !Sub ${EnvironmentName}:SecurityGroupId
+  SecurityGroupId:
+    Description: The ID of the security group
+    Value: !Ref GenAIChatboxSG
+    Export:
+      Name: !Sub ${EnvironmentName}:SecurityGroupId
