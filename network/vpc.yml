@@ -73,7 +73,7 @@ Resources:
       RouteTableId: !Ref PublicRouteTable
 
   VPC Security Group :
-    GenAIChatboxSG:
+    GenAIChatboxSG: # Logical name of the security group resource
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Security group for my application
@@ -94,7 +94,7 @@ Resources:
           FromPort: 8501
           ToPort: 8501
           CidrIp: 0.0.0.0/0
-    VpcId: !Ref 'VPC'
+    VpcId: !Ref VPC # Assuming VPC is the logical name of your VPC resource
 
 
 Outputs:
