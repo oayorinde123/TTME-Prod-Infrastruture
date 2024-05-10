@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create EC2 instance in existing VPC and subnet with tags using referencing
+
+Parameters:
+  VpcId:
+    Type: String
+    Description: ID of the existing VPC
+  SubnetId:
+    Type: String
+    Description: ID of the existing public subnet
+  SecurityGroupId:
+    Type: String
+    Description: ID of the existing security group
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t3.medium
+      ImageId: ami-0f6a30e1345e8b275 
+      SubnetId: !Ref SubnetId
+      SecurityGroupIds:
+        - !Ref SecurityGroupId
+      Tags:
+        - Key: created_by
+          Value: oye
